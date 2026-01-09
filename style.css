@@ -4,14 +4,22 @@
     box-sizing: border-box;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* важно для корректного расчёта блока */
+}
+
 .banner {
-    width: 100vw;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
+    width: 100%; /* баннер занимает всю ширину окна */
+    height: auto;  /* высота подстраивается по пропорции */
 }
 
 .banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    display: block;          /* убирает нижние отступы под изображением */
+    width: 100%;             /* растягиваем по ширине */
+    height: auto;            /* сохраняем пропорции */
+    aspect-ratio: 2.5 / 1;   /* фиксированное соотношение 2.5:1 */
+    object-fit: contain;     /* не обрезаем изображение */
+    object-position: top;    /* верх изображения прижат к верху окна */
 }
